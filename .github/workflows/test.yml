@@ -20,7 +20,7 @@ jobs:
         id: version-from-tag
         run: |
           TAG=${{ github.event.client_payload.tag }}
-          echo "VERSION=${TAG#v}" >> $VERSION
+          echo "VERSION=${TAG#v}" >> $GITHUB_OUTPUT
 
       - name: Updating version of tiny-lr
         run: |
