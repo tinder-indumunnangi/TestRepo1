@@ -19,13 +19,13 @@ jobs:
       - name: Get version from Tag
         id: version-from-tag
         run: |
-        TAG=${{ github.event.client_payload.tag }}
-        echo "VERSION=${TAG#v}" >> $VERSION
+          TAG=${{ github.event.client_payload.tag }}
+          echo "VERSION=${TAG#v}" >> $VERSION
 
       - name: Updating version of tiny-lr
         run: |
-        echo ${{steps.version-from-tag.outputs.VERSION}}
-        yarn remove tiny-lr &&  yarn add tiny-lr@^${{ steps.version-from-tag.outputs.VERSION }}
+          echo ${{steps.version-from-tag.outputs.VERSION}}
+          yarn remove tiny-lr &&  yarn add tiny-lr@^${{ steps.version-from-tag.outputs.VERSION }}
 
       # - name: Updating version of ui-core
       #   run: yarn remove @tinderapp/ui-core &&  yarn add @tinderapp/ui-core@^${{ github.event.client_payload.tag }}
