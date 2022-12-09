@@ -3,20 +3,12 @@ on:
   repository_dispatch:
     types: [my-event]
 jobs:
-  myEvent:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.client_payload.ref }}
-      - run: echo ${{ github.event.client_payload.tag }} > test.txt
-
   createPullRequest:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Create report file
-        run: date +%s > report.txt
+        run: ${{ github.event.client_payload.tag }} > test.txt
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
