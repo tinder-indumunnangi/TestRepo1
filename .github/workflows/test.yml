@@ -13,11 +13,14 @@ jobs:
           node-version: "14.x"
           cache: "yarn"
 
-      - name: Updating version of core
-        run: yarn remove @tinderapp/ui-core &&  yarn add @tinderapp/ui-core@^${{ github.event.client_payload.tag }}
+      - name: Updating version of tiny-lr
+        run: yarn remove tiny-lr &&  yarn add tiny-lr@^${{ github.event.client_payload.tag }}
 
-      - name: Updating version of react
-        run: yarn remove @tinderapp/ui-react &&  yarn add @tinderapp/ui-react@^${{ github.event.client_payload.tag }}
+      # - name: Updating version of core
+      # run: yarn remove @tinderapp/ui-core &&  yarn add @tinderapp/ui-core@^${{ github.event.client_payload.tag }}
+
+      # - name: Updating version of react
+      # run: yarn remove @tinderapp/ui-react &&  yarn add @tinderapp/ui-react@^${{ github.event.client_payload.tag }}
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
