@@ -2,24 +2,6 @@
 # yarn lockfile v1
 
 
-"@babel/runtime@^7.15.3":
-  version "7.20.6"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.20.6.tgz#facf4879bfed9b5326326273a64220f099b0fce3"
-  integrity sha512-Q+8MqP7TiHMWzSfwiJwXCjyf4GYA4Dgw3emg/7xmwsdLJOZUp+nMqcOwOzzYheuM1rhDu8FSj2l0aoMygEuXuA==
-  dependencies:
-    regenerator-runtime "^0.13.11"
-
-"@tinderapp/ui-core@3.0.2":
-  version "3.0.2"
-  resolved "https://npm.pkg.github.com/download/@TinderApp/ui-core/3.0.2/6be135f6f7a08711a6b6908d2c520eaec319a383#6be135f6f7a08711a6b6908d2c520eaec319a383"
-  integrity sha512-gYSFqQIgTUne6b6kra4AgdS2gONrh8y/PUCLEJJB0iEodEJ48WQ9d4YU6MOz9YC049JvTcYEwKw/WnlKE7d30Q==
-  dependencies:
-    "@babel/runtime" "^7.15.3"
-    hex-rgb "^4.3.0"
-    hsluv "^0.1.0"
-    rgb-hex "^3.0.0"
-    rgb-lab "^1.0.0"
-
 body@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/body/-/body-5.1.0.tgz#e4ba0ce410a46936323367609ecb4e6553125069"
@@ -95,16 +77,6 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
-hex-rgb@^4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/hex-rgb/-/hex-rgb-4.3.0.tgz#af5e974e83bb2fefe44d55182b004ec818c07776"
-  integrity sha512-Ox1pJVrDCyGHMG9CFg1tmrRUMRPRsAWYc/PinY0XzJU4K7y7vjNoLKIQ7BR5UJMCxNN8EM1MNDmHWA/B3aZUuw==
-
-hsluv@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/hsluv/-/hsluv-0.1.0.tgz#29f40d49642bd56dd0c192122abcc723bb5c2d6c"
-  integrity sha512-ERcanKLAszD2XN3Vh5r5Szkrv9q0oSTudmP0rkiKAGM/3NMc9FLmMZBB7TSqTaXJfSDBOreYTfjezCOYbRKqlw==
-
 http-parser-js@>=0.5.1:
   version "0.5.8"
   resolved "https://registry.yarnpkg.com/http-parser-js/-/http-parser-js-0.5.8.tgz#af23090d9ac4e24573de6f6aecc9d84a48bf20e3"
@@ -144,21 +116,6 @@ raw-body@~1.1.0:
   dependencies:
     bytes "1"
     string_decoder "0.10"
-
-regenerator-runtime@^0.13.11:
-  version "0.13.11"
-  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.11.tgz#f6dca3e7ceec20590d07ada785636a90cdca17f9"
-  integrity sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==
-
-rgb-hex@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/rgb-hex/-/rgb-hex-3.0.0.tgz#eab0168cc1279563b18a14605315389142e2e487"
-  integrity sha512-8h7ZcwxCBDKvchSWbWngJuSCqJGQ6nDuLLg+QcRyQDbX9jMWt+PpPeXAhSla0GOooEomk3lCprUpGkMdsLjKyg==
-
-rgb-lab@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/rgb-lab/-/rgb-lab-1.0.0.tgz#cbc45a3fb9ac56bf9d1236fbc60f5e485f1b31d6"
-  integrity sha512-+UMIeoqD5b0hNIm/BfoJNcRBcorxxgrkSx6Yho27j/9/qJZBh+kydFs2mNkLbjb2MremdsvihZ2zGdZlIBGbsA==
 
 safe-buffer@>=5.1.0:
   version "5.2.1"
