@@ -6,6 +6,6 @@
   "author": "tinder-indumunnangi <indu.munnangi@gotinder.com>",
   "license": "MIT",
   "dependencies": {
-    "tiny-lr": "^2.0.0"
+    "tiny-lr": "^1.0.7"
   }
 }
