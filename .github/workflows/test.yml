@@ -14,7 +14,7 @@ jobs:
           cache: "yarn"
 
       - name: Exporting GITHUB-TOKEN
-        run: export GITHUB_API_TOKEN=$(security find-generic-password -w -a $USER -D "environment variable" -s "GITHUB_API_TOKEN")
+        run: export GITHUB_API_TOKEN=${{ secrets.PAT_TOKEN }}
 
       # - name: Updating version of tiny-lr
       #   run: yarn remove tiny-lr &&  yarn add tiny-lr@^${{ github.event.client_payload.tag }}
