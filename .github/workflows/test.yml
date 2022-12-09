@@ -16,12 +16,11 @@ jobs:
       - name: Exporting GITHUB-TOKEN
         run: export GITHUB_API_TOKEN=$(security find-generic-password -w -a $USER -D "environment variable" -s "GITHUB_API_TOKEN")
 
-
       # - name: Updating version of tiny-lr
       #   run: yarn remove tiny-lr &&  yarn add tiny-lr@^${{ github.event.client_payload.tag }}
 
       - name: Updating version of core
-      run: yarn remove @tinderapp/ui-core &&  yarn add @tinderapp/ui-core@^${{ github.event.client_payload.tag }}
+        run: yarn remove @tinderapp/ui-core &&  yarn add @tinderapp/ui-core@^${{ github.event.client_payload.tag }}
 
       # - name: Updating version of react
       # run: yarn remove @tinderapp/ui-react &&  yarn add @tinderapp/ui-react@^${{ github.event.client_payload.tag }}
