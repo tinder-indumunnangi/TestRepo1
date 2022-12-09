@@ -6,6 +6,6 @@
   "author": "tinder-indumunnangi <indu.munnangi@gotinder.com>",
   "license": "MIT",
   "dependencies": {
-    "@tinderapp/ui-core": "3.0.2"
+    "tiny-lr": "^2.0.0"
   }
 }
