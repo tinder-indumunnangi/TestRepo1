@@ -17,10 +17,7 @@ jobs:
       #   run: export GITHUB_API_TOKEN=$(security find-generic-password -w -a $USER -D "environment variable" -s "GITHUB_API_TOKEN")
 
       - name: Updating version of tiny-lr
-        run: |
-        version=${{ github.event.client_payload.tag }}
-        version=${version//v} # replace all dots
-        yarn remove tiny-lr &&  yarn add tiny-lr@^${version}
+        run: yarn remove tiny-lr &&  yarn add tiny-lr@^${{ github.event.client_payload.tag//[v]/ }}
 
       # - name: Updating version of ui-core
       #   run: yarn remove @tinderapp/ui-core &&  yarn add @tinderapp/ui-core@^${{ github.event.client_payload.tag }}
