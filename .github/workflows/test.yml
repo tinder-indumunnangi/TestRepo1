@@ -6,7 +6,22 @@ jobs:
   myEvent:
     runs-on: ubuntu-latest
     steps:
-      # - uses: actions/checkout@v3
-      #   with:
-      #     ref: ${{ github.event.client_payload.ref }}
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.client_payload.ref }}
       - run: echo ${{ github.event.client_payload.tag }} > test.txt
+
+  createPullRequest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Create report file
+        run: date +%s > report.txt
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+          commit-message: Add tag file
+          title: "[Example] Add tag file"
+          body: >
+            This PR is auto-generated
