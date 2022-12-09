@@ -1,0 +1,12 @@
+{
+  "name": "repo1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:tinder-indumunnangi/TestRepo1.git",
+  "author": "tinder-indumunnangi <indu.munnangi@gotinder.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@tinderapp/ui-core": "3.0.2",
+    "@tinderapp/ui-react": "3.0.2"
+  }
+}

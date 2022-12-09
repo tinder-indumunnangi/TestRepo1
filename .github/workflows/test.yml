@@ -5,10 +5,20 @@ on:
 jobs:
   createPullRequest:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - name: Create report file
-        run: date +%s > report.txt
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "14.x"
+          cache: "yarn"
+
+      - name: Updating version of core
+        run: yarn remove @tinderapp/ui-core &&  yarn add @tinderapp/ui-core@^${{ github.event.client_payload.tag }}
+
+      - name: Updating version of react
+        run: yarn remove @tinderapp/ui-react &&  yarn add @tinderapp/ui-react@^${{ github.event.client_payload.tag }}
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
