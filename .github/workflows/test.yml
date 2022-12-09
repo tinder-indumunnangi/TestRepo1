@@ -16,16 +16,16 @@ jobs:
       # - name: Exporting GITHUB-TOKEN
       #   run: export GITHUB_API_TOKEN=$(security find-generic-password -w -a $USER -D "environment variable" -s "GITHUB_API_TOKEN")
 
-      - name: Get version from Tag
-        id: version-from-tag
-        run: |
-          TAG=${{ github.event.client_payload.tag }}
-          echo "VERSION=${TAG#v}" >> $GITHUB_OUTPUT
+      # - name: Get version from Tag
+      #   id: version-from-tag
+      #   run: |
+      #     TAG=${{ github.event.client_payload.tag }}
+      #     echo "VERSION=${TAG#v}" >> $GITHUB_OUTPUT
 
       - name: Updating version of tiny-lr
         run: |
-          echo ${{steps.version-from-tag.outputs.VERSION}}
-          yarn remove tiny-lr &&  yarn add tiny-lr@^${{ steps.version-from-tag.outputs.VERSION }}
+          VERSION=${{ github.event.client_payload.tag }}
+          yarn remove tiny-lr &&  yarn add tiny-lr@^${VERSION#v}
 
       # - name: Updating version of ui-core
       #   run: yarn remove @tinderapp/ui-core &&  yarn add @tinderapp/ui-core@^${{ github.event.client_payload.tag }}
