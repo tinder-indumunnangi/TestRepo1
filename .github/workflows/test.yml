@@ -17,7 +17,7 @@ jobs:
       #   run: export GITHUB_API_TOKEN=$(security find-generic-password -w -a $USER -D "environment variable" -s "GITHUB_API_TOKEN")
 
       - name: Updating version of tiny-lr
-        run: 
+        run: |
         TAG=${{ github.event.client_payload.tag }}
         echo "VERSION=${TAG#v}" >> $GITHUB_ENV
         yarn remove tiny-lr &&  yarn add tiny-lr@^$GITHUB_ENV
