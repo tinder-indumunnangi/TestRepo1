@@ -17,7 +17,8 @@ jobs:
       #   run: export GITHUB_API_TOKEN=$(security find-generic-password -w -a $USER -D "environment variable" -s "GITHUB_API_TOKEN")
 
       - name: Updating version of tiny-lr
-        run: yarn remove tiny-lr &&  yarn add tiny-lr@^${{ github.event.client_payload.tag }}
+        $version = ${{ github.event.client_payload.tag }} -replace "v", ""
+        run: yarn remove tiny-lr &&  yarn add tiny-lr@^$version
 
       # - name: Updating version of ui-core
       #   run: yarn remove @tinderapp/ui-core &&  yarn add @tinderapp/ui-core@^${{ github.event.client_payload.tag }}
@@ -31,7 +32,7 @@ jobs:
           branch: autoUpdateObsidian/${{ github.event.client_payload.tag }}
           token: ${{ secrets.PAT_TOKEN }}
           commit-message: Updated Obsidian Dependencies with v${{ github.event.client_payload.tag }}
-          title: "Bump Obsidian Dependencies to v${{ github.event.client_payload.tag }}"
+          title: "Bump Obsidian Dependencies to ${{ github.event.client_payload.tag }}"
           body: >
             This PR is auto-generated
           labels: |
